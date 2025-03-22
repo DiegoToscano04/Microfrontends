@@ -1,8 +1,9 @@
-<h1>Este es la aplicación HOST</h1>
-<nav>
-  <a routerLink="/">Home</a>
-  <button class="btn btn-primary">¡Bootstrap Funciona!</button>
-
-</nav>
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="nav-superior">
+    <app-navbar></app-navbar>
+</div>
+<div class="nav-inferior">
+  <app-navbar-inferior></app-navbar-inferior>
+</div>
+<div class="main-content">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,152 @@
+// Fijamos un ancho flexible para el contenedor (esto se aplicaría a la página completa)
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  padding: 0px 20px;
+  height: 47px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar-brand img {
+  width: 120px; // Aumenta el tamaño de la imagen
+  height: auto; // Mantiene la proporción correcta
+  object-fit: contain;
+}
+
+// Barra de búsqueda flexible
+.search-bar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 8px; // Bordes redondeados
+  overflow: hidden;
+  background-color: white;
+  transition: max-width 0.3s ease-in-out; // Transición para un efecto suave
+
+  // El contenedor de la barra de búsqueda debe alinearse correctamente sin moverse
+  max-width: 800px; // Máximo ancho para pantallas grandes
+  width: 100%; // Estira el ancho para aprovechar el espacio disponible
+  flex-shrink: 0; // Evita que se reduzca el tamaño más allá del `max-width`
+
+  .search-category {
+    background-color: #ffffff;
+    color: #ABA3A3;
+    font-family: century gothic;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    padding-right: 30px;  // Aumenta el espacio entre la flecha y el texto
+    background-position: right 10px center;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%393939'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-style: solid;
+    border-color: #cbcbcb;
+
+    &:hover {
+      background-color: #f0f0f0; // Color más oscuro al pasar el mouse
+      cursor: pointer;
+    }
+  }
+
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .search-input::placeholder {
+    font-family: century gothic;
+    font-size: 15px;
+    color: #ABA3A3;  // Gris oscuro (cámbialo según prefieras)
+  }
+
+  .search-button {
+    background-color: #D9D9D9;
+    border: none;
+    padding: 12px 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: white;
+      font-size: 23px;
+    }
+  }
+
+  .search-button:hover {
+    background-color: #B6B6B6;
+  }
+}
+
+// Media query para pantallas más pequeñas
+@media (max-width: 1200px) {
+  .search-bar {
+    max-width: 600px; 
+   // Añade transición suave
+  }
+}
+@media (max-width: 1050px) {
+  .search-bar {
+    max-width: 450px; 
+    // Añade transición suave
+  }
+}
+@media (max-width: 1000px) {
+  .search-bar {
+    max-width: 450px; 
+    transform: translateX(-0%);
+ 
+  }
+}
+@media (max-width: 993px) {
+  .search-bar {
+    max-width: 450px; 
+    transform: translateX(-0%);
+
+  }
+}
+@media (max-width: 992px) {
+  .search-bar {
+    max-width: 450px; 
+     transform: translateX(-0%);
+    
+  }
+}
+@media (max-width: 991px) {
+  .search-bar {
+    max-width: 450px; 
+     transform: translateX(-80%);
+     // Añade transición suave
+  }
+}
+@media (max-width: 990px) {
+  .search-bar {
+    max-width: 450px; 
+     transform: translateX(-80%);
+     transition: transform 0.000001s ease;  // Añade transición suave
+  }
+}
+
+@media (max-width: 786px) {
+  .search-bar {
+    max-width: 450px; 
+    transition: transform 0.3s ease-in-out;  // Añade transición suave
+  }
+}
+

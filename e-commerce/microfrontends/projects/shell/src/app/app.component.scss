@@ -1,0 +1,49 @@
+// Contenedor principal de la página
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden; // Evita desplazamiento horizontal
+  }
+  
+  // Ajuste global del layout
+  .nav-superior,
+  .nav-inferior,
+  .main-content {
+    width: 100%;
+    max-width: 1680px;
+    min-width: 1480px;  // Ajustar el tamaño mínimo
+   // Centra el contenido
+  }
+  
+  // Navbar superior e inferior estáticos
+  .nav-superior, .nav-inferior {
+    position: relative;
+    width: 100%;
+  }
+  
+  // Contenido principal flexible
+  .main-content {
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  // Media queries para pantallas más pequeñas
+  @media (max-width: 1200px) {
+    .nav-superior,
+    .nav-inferior,
+    .main-content {
+      width: 100%;
+   
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-superior,
+    .nav-inferior {
+      flex-direction: column; // Cambia el layout para pantallas más pequeñas
+    }
+  }
+  
