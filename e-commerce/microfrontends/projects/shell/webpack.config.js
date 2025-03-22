@@ -9,9 +9,12 @@ sharedMappings.register(
   [/* mapped paths to share */]);
 
 module.exports = {
+  target: "web",
   output: {
     uniqueName: "shell",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType: 'text/javascript',
+    
   },
   optimization: {
     runtimeChunk: false
