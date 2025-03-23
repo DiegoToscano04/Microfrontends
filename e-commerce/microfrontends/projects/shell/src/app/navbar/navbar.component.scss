@@ -1,24 +1,26 @@
 // Fijamos un ancho flexible para el contenedor (esto se aplicaría a la página completa)
 .container {
+  display: flex;
   max-width: 1420px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .navbar-brand {
   display: flex;
-  padding: 0px 20px;
+  padding: -20px 20px;
   height: 47px;
   align-items: center;
   overflow: hidden;
+ margin-left: -20px;
 }
-
 .navbar-brand img {
   width: 120px; // Aumenta el tamaño de la imagen
   height: auto; // Mantiene la proporción correcta
-  object-fit: contain;
+ 
 }
 
 // Barra de búsqueda flexible
@@ -30,11 +32,12 @@
   overflow: hidden;
   background-color: white;
   transition: max-width 0.3s ease-in-out; // Transición para un efecto suave
-
   // El contenedor de la barra de búsqueda debe alinearse correctamente sin moverse
   max-width: 800px; // Máximo ancho para pantallas grandes
   width: 100%; // Estira el ancho para aprovechar el espacio disponible
   flex-shrink: 0; // Evita que se reduzca el tamaño más allá del `max-width`
+  margin-left: 20px;
+ 
 
   .search-category {
     background-color: #ffffff;
@@ -94,10 +97,10 @@
   }
 }
 
-// Media query para pantallas más pequeñas
+// Media query barra de búsqueda para pantallas más pequeñas
 @media (max-width: 1200px) {
   .search-bar {
-    max-width: 600px; 
+    max-width: 700px; 
    // Añade transición suave
   }
 }
@@ -148,5 +151,130 @@
     max-width: 450px; 
     transition: transform 0.3s ease-in-out;  // Añade transición suave
   }
+}
+
+//Bienvenido, Ingresa Cuenta, Carrito, Pedidos
+
+// Navbar superior
+.navbar-nav {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;  // Reduce el espacio entre los elementos del navbar
+  transition: transform 0.3s ease-in-out;
+  width: auto; 
+  flex-wrap: wrap; // Ajusta el contenedor de los enlaces a su contenido
+  
+  
+}
+.navbar-nav .nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Estilo para el ícono de la persona */
+.nav-item .fa-user {
+  font-size: 20px;  // Aumenté el tamaño del ícono
+  margin-right: 1px;  // Reducido el margen entre el ícono y el texto
+}
+
+/* Asegura que el contenedor y el texto se vean correctamente */
+.navbar-nav .nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 4px;  // Reducido el espacio entre el ícono y el texto
+  transition: border 0.3s ease;  // Efecto suave para el borde
+  border-radius: 5px;  // Bordes
+}
+
+.nav-link div {
+  display: flex;
+  flex-direction: column;  // Apila el texto verticalmente
+  align-items: flex-start;  // Alinea el texto a la izquierda
+}
+
+
+.carrito-text {
+  margin-top: 10px;
+  margin-left: -5px;
+  font-size: 15px !important;
+  font-weight: 750;  // Hace que "Carrito" esté en negrita
+}
+
+.account {
+  font-size: 14px;  // Ajusta el tamaño de la palabra "Cuenta"
+  color: #ffffff;
+  font-weight: 750;  // Color de la palabra "Cuenta"
+}
+
+.bold {
+  font-weight: 750;  // Hace que "y Pedidos" esté en negrita
+}
+
+/* Estilo para el ícono de camión y el texto de Devoluciones y Pedidos */
+.navbar-nav .nav-item .fa-truck {
+  font-size: 30px;  // Aumenta el tamaño del ícono de camión
+  margin-right: 8px;  // Espacio entre el ícono y el texto
+}
+
+.truck-icon {
+  width: 50px;  // Ajusta el tamaño del ícono aquí
+  height: auto;
+  margin-right: 3px;
+}
+
+
+.navbar-nav .nav-item .nav-link {
+  display: flex;
+  align-items: center;  // Centra el ícono y el texto verticalmente
+  gap: 8px;  // Espacio entre el ícono y el texto
+  color: #ffffff;  // Color de texto blanco
+  text-decoration: none;  // Elimina el subrayado del texto
+  padding: 0;  // Elimina el padding para evitar el efecto de "botón"
+  background-color: transparent;  // Elimina el color de fondo
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: transparent;  // Mantiene el fondo transparente al pasar el mouse
+  color: #ffffff;  // Mantiene el color blanco al pasar el mouse
+  border-radius: 0;  // Elimina los bordes redondeados
+}
+
+
+.navbar-nav .nav-item .nav-link span {
+  font-size: 14px;  // Tamaño más pequeño para los textos "Devoluciones" y "y Pedidos"
+}
+
+.navbar-nav .nav-item .nav-link span:first-child {
+  font-size: 12px;  // Tamaño más pequeño para "Devoluciones"
+}
+
+.navbar-nav .nav-item .nav-link span:last-child {
+  font-size: 12px;  // Tamaño más pequeño para "y Pedidos"
+}
+
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  width: 30px;  // Ajusta el tamaño del ícono según lo necesites
+  height: auto;  // Mantiene la proporción
+}
+
+.cart-count {
+  position: absolute;
+  top: -18px;
+  right: -2px;
+  color: #FDDE3B;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
 }
 

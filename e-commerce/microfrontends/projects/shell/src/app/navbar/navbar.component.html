@@ -1,39 +1,68 @@
-    <!-- Barra superior -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">
-                <img src="../../assets/images/LogoUis.png">
-            </a>
+<!-- Barra superior -->
+<nav class="navbar navbar-expand-lg navbar-dark  py-2">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/images/LogoUis.png">
+        </a>
 
-            <!-- Barra de búsqueda -->
-            <form class="search-bar">
-                <select class="search-category">
-                    <option selected>Todas las categorías</option>
-                    <option value="tecnologia">Tecnología</option>
-                    <option value="moda">Moda</option>
-                    <option value="electrodomesticos">Electrodomésticos</option>
-                </select>
-                <input type="text" class="search-input" placeholder="Buscar productos..." aria-label="Buscar">
-                <button type="submit" class="search-button">
-                    <i class="bi bi-search"></i>
-                </button>
-            </form>
-            
-
-
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTop">
-                <span class="navbar-toggler-icon"></span>
+        <!-- Barra de búsqueda -->
+        <form class="search-bar">
+            <select class="search-category">
+                <option selected>Todas las categorías</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="moda">Moda</option>
+                <option value="electrodomesticos">Electrodomésticos</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Buscar productos..." aria-label="Buscar">
+            <button type="submit" class="search-button">
+                <i class="bi bi-search"></i>
             </button>
+        </form>
 
-            <!-- Enlaces a la derecha -->
-            <div class="collapse navbar-collapse" id="navbarTop">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Cuenta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pedidos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Carrito 🛒</a></li>
-                </ul>
-            </div>
+        <!-- Botón responsive -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTop">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Enlaces a la derecha -->
+        <div class="enlaces-derecha collapse navbar-collapse" id="navbarTop">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <!-- Ícono de persona a la izquierda del texto -->
+                        <i class="fa-regular fa-user"></i>
+                        <div>
+                            <span>Bienvenido, Ingresa</span>
+                            <span class="account">Cuenta</span> <!-- La palabra Cuenta estará debajo -->
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Ícono de camión para devoluciones y pedidos -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <!-- Ícono de camión a la izquierda del texto -->
+                        <img class="truck-icon" src="../../assets/images/carro_envio.png" alt="Camión" >
+                        <div>
+                            <span>Devoluciones</span>
+                            <span class="bold">y Pedidos</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <!-- Ícono personalizado del carrito -->
+                        <div class="cart-icon-container">
+                            <img src="../../assets/images/cart-image.png" alt="Carrito" class="cart-icon">
+                            <!-- Contenedor para el número de productos en el carrito -->
+                            <span id="cart-count" class="cart-count">0</span>
+                        </div>
+                        <span  class="carrito-text">Carrito</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
