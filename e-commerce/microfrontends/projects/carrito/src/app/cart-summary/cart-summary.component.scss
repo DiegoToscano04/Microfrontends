@@ -1,0 +1,108 @@
+.summary-container {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-family: poppins, sans-serif;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  
+  .summary-header {
+    background-color: #ffd233;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+    border-radius: 2px 2px 0 0;
+    margin: -16px -16px 16px -16px;
+    margin-bottom: 40px;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 16px 0;
+  }
+  
+  .divider.short {
+    width: 80%;
+    margin: 16px auto;
+  }
+  
+  .coupon-section {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .coupon-text {
+    color: #666;
+    padding: 4px;
+  }
+  
+  .apply-text {
+    color: #007185;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  
+  .total-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .checkout-button {
+    width: 100%;
+    background-color: #FFE100;
+    color: #111;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+  }
+  
+  .checkout-button:hover {
+    background-color: #f7ca00;
+  }
+  .product-row {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    padding: 4px 0;
+ 
+  }
+  .highlight-text {
+    font-size: 0.9rem; // Puedes ajustar a 1.2rem si lo quieres más grande
+    font-weight: 600;  // Usa 700 para aún más negrilla
+         // Asegura que sea visible
+  }
+  
+  .checkout-button {
+    font-size: 1rem; // Aumenta tamaño del texto del botón
+    font-weight: 700;  // Negrita fuerte
+  }
+  

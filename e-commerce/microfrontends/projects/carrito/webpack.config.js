@@ -1,56 +1,15 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const mf = require("@angular-architects/module-federation/webpack");
-const path = require("path");
-const share = mf.share;
+const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(
-  path.join(__dirname, '../../tsconfig.json'),
-  [/* mapped paths to share */]);
+module.exports = withModuleFederationPlugin({
 
-module.exports = {
-  output: {
-    uniqueName: "carrito",
-    publicPath: "auto"
+  name: 'carrito-mfe',
+
+  exposes: {
+    './AppComponent': './projects/carrito/src/app/app.component.ts',
   },
-  optimization: {
-    runtimeChunk: false
-  },   
-  resolve: {
-    alias: {
-      ...sharedMappings.getAliases(),
-    }
+
+  shared: {
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
-  experiments: {
-    outputModule: true
-  },
-  plugins: [
-    new ModuleFederationPlugin({
-        library: { type: "module" },
 
-        // For remotes (please adjust)
-        name: "carrito",
-        filename: "remoteEntry.js",
-        exposes: {
-        './Component': './projects/carrito/src/app/app.component.ts',
-        },        
-        
-        // For hosts (please adjust)
-        // remotes: {
-        //     "shell": "http://localhost:4200/remoteEntry.js",
-
-        // },
-
-        shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-
-          ...sharedMappings.getDescriptors()
-        })
-        
-    }),
-    sharedMappings.getPlugin()
-  ],
-};
+});

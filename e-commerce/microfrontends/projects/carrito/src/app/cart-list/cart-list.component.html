@@ -1,0 +1,23 @@
+<div class="cart-wrapper">
+    <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+      <!-- Columna izquierda -->
+      <div class="item-left">
+        <img [src]="item.image" alt="{{ item.name }}" class="item-image" />
+        <div class="item-info">
+          <div class="item-name">{{ item.name }}</div>
+          <button (click)="remove(item)" class="delete-button">Eliminar</button>
+        </div>
+      </div>
+  
+      <div class="quantity-controls">
+        <button (click)="decrement(item)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button (click)="increment(item)">+</button>
+      </div>
+  
+      <div class="item-price-total">
+        {{ item.price * item.quantity | currency:'COP':'symbol' }}
+      </div>
+    </div>
+  </div>
+  

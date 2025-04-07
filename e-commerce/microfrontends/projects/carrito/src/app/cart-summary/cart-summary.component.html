@@ -1,0 +1,29 @@
+<div class="summary-container">
+    <div class="summary-header">
+      Total Carrito
+    </div>
+  
+    <div class="product-row">
+        <span class="highlight-text">Productos ({{ getTotalItems() }})</span>
+    
+    </div>
+  
+    <hr class="divider short" />
+  
+    <div class="coupon-section">
+      <span class="coupon-text">Cupón de Descuento</span>
+      <span class="apply-text">Aplicar</span>
+    </div>
+  
+    <hr class="divider short" />
+  
+    <!-- Total -->
+    <div class="total-section">
+      <span>Total</span>
+      <span>{{ getTotal() | currency:'COP':'symbol':'1.2-2' }}</span>
+    </div>
+    <div class="total-section">
+    <button class="checkout-button">Proceder al Pago</button>
+    </div>
+</div>
+  
