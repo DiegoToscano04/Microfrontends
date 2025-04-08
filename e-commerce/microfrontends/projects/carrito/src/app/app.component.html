@@ -1,4 +1,4 @@
-<<app-cart-empty *ngIf="cartItems.length === 0" />
+<app-cart-empty *ngIf="cartItems.length === 0" />
 <div class="cart-container" *ngIf="cartItems.length > 0">
   <app-cart-list [cartItems]="cartItems"></app-cart-list>
   <app-cart-summary [cartItems]="cartItems"></app-cart-summary>
